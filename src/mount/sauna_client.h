@@ -135,7 +135,7 @@ struct FsInitParams {
 	             mkdir_copy_sgid(kDefaultMkdirCopySgid), sugid_clear_mode(kDefaultSugidClearMode),
 	             use_rw_lock(kDefaultUseRwLock),
 	             acl_cache_timeout(kDefaultAclCacheTimeout), acl_cache_size(kDefaultAclCacheSize),
-	             verbose(kDefaultVerbose) {
+	             verbose(kDefaultVerbose), ignoreflush(0) {
 	}
 
 	FsInitParams(const std::string &bind_host, const std::string &host, const std::string &port, const std::string &mountpoint)
@@ -164,7 +164,7 @@ struct FsInitParams {
 	             mkdir_copy_sgid(kDefaultMkdirCopySgid), sugid_clear_mode(kDefaultSugidClearMode),
 	             use_rw_lock(kDefaultUseRwLock),
 	             acl_cache_timeout(kDefaultAclCacheTimeout), acl_cache_size(kDefaultAclCacheSize),
-	             verbose(kDefaultVerbose) {
+	             verbose(kDefaultVerbose), ignoreflush(0) {
 	}
 
 	std::string bind_host;
@@ -211,6 +211,7 @@ struct FsInitParams {
 	unsigned acl_cache_size;
 
 	bool verbose;
+	bool ignoreflush;
 
 	std::string io_limits_config_file;
 };
